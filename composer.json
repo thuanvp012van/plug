@@ -2,17 +2,23 @@
     "name": "penguin/plug",
     "description": "The Penguin Plug package.",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Penguin\\Component\\Plug\\": "src/"
-        }
-    },
+    "keywords": [
+        "php",
+        "fswatch",
+        "penguin"
+    ],
     "authors": [
         {
             "name": "Nguyễn Hoàng Thắng Thuận",
             "email": "thuanvp012van@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Penguin\\Component\\Plug\\": "src/"
+        }
+    },
     "require": {
         "php": "^8.1"
     }
