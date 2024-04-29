@@ -22,7 +22,6 @@ trait Plug
      *
      * @param string $name
      * @param callable $callback
-     * 
      * @return void
      */
     public static function plug(string $name, callable $callback): void
@@ -35,7 +34,6 @@ trait Plug
      *
      * @param object $mixin
      * @param bool $replace
-     * 
      * @return void
      *
      * @throws \LogicException
@@ -68,7 +66,6 @@ trait Plug
      * Check if the plug is attached.
      *
      * @param string $name
-     * 
      * @return bool
      */
     public static function hasPlug(string $name): bool
@@ -80,7 +77,6 @@ trait Plug
      * Unplug.
      *
      * @param string $name
-     * 
      * @return void
      */
     public static function unplug(string $name): void
@@ -103,12 +99,11 @@ trait Plug
      *
      * @param string $method
      * @param array $parameters
-     * 
      * @return mixed
      *
      * @throws \BadMethodCallException
      */
-    public static function __callStatic(string $method, array $parameters): mixed
+    public static function __callStatic(string $method, array $parameters = []): mixed
     {
         if (!static::hasplug($method)) {
             throw new BadMethodCallException(sprintf(
@@ -127,12 +122,11 @@ trait Plug
      *
      * @param string $method
      * @param array $parameters
-     * 
      * @return mixed
      *
      * @throws \BadMethodCallException
      */
-    public function __call(string $method, array $parameters): mixed
+    public function __call(string $method, array $parameters = []): mixed
     {
         if (!static::hasplug($method)) {
             throw new BadMethodCallException(sprintf(
